@@ -1,0 +1,22 @@
+{
+  "name": "2223_m04uf2",
+  "version": "1.0.0",
+  "description": "Repositorio de la aplicación de React para la UF2 del módulo M04",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alejandroenti/2223_M04UF2.git"
+  },
+  "author": "Alejandro López",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/alejandroenti/2223_M04UF2/issues"
+  },
+  "homepage": "https://github.com/alejandroenti/2223_M04UF2#readme",
+  "dependencies": {
+    "mongodb": "^5.0.1"
+  }
+}
