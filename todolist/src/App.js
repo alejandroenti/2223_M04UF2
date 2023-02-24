@@ -1,4 +1,5 @@
 import Title from './Title'
+import TaskForm from './TaskForm'
 
 import './App.css';
 
@@ -6,10 +7,7 @@ function App() {
   return (
     <main className="App">
 		<Title text="ToDO App"/>
-		<form>
-			<p><input type="text" name="todo-item" placeholder="Add your new todo"/></p>
-			<button type="button">+</button>
-		</form>
+		<TaskForm />
 		<ol>
 			<li>Buy a new gaming laptop <button type="button">🗑️</button></li>
 		</ol>
