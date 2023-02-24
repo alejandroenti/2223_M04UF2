@@ -13,7 +13,12 @@ class CountButton extends React.Component {
 	render() {
 
 		return (
-			<button onClick={() => alert("oli")}>Habla {this.props.texto}</button>
+			<section>
+				<p>{this.state.contador}</p> 
+				<button type="button" onClick={() => {
+					this.setState({contador: this.state.contador + 1})
+				}}>Cuenta</button>
+			</section>
 		);	
 	}
 }
