@@ -1,9 +1,11 @@
+import Title from './Title'
+
 import './App.css';
 
 function App() {
   return (
     <main className="App">
-		<h1>Todo App</h1>
+		<Title text="ToDO App"/>
 		<form>
 			<p><input type="text" name="todo-item" placeholder="Add your new todo"/></p>
 			<button type="button">+</button>
