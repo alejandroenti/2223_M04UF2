@@ -5,7 +5,7 @@ class TaskItem extends React.Component {
 	render() {
 		return (
 		
-		<li>Buy a new gaming laptop <button type="button">🗑️ </button></li>
+		<li>{this.props.text} <button type="button">🗑️ </button></li>
 		);
 	}
 }

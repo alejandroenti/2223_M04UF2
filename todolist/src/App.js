@@ -7,9 +7,24 @@ import TaskList from './TaskList'
 import './App.css';
 
 class App extends React.Component {
+  
+  constructor(props) {
+  	super(props);
+	this.state = {
+		tasklist: ["Lista de la app", "otra tarea"]
+	};
+  }
 
   addTask = (task) => {
-	console.log(task);	
+
+	if (task == "") {
+		return;
+	}
+
+	this.state.tasklist.push(task);
+	this.setState({
+		tasklist: this.state.tasklist
+	});
   }
 
   render() {
@@ -18,8 +33,8 @@ class App extends React.Component {
     	<main className="App">
 			<Title text="ToDO App" />
 			<TaskForm onAddTask={this.addTask} />
-			<TaskList />
-			<p>You have <strong>4</strong> pending tasks</p>
+			<TaskList list={this.state.tasklist} />
+			<p>You have <strong>{this.state.tasklist.length}</strong> pending tasks</p>
     	</main>
   	);
   }
