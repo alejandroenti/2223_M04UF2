@@ -11,17 +11,13 @@ class App extends React.Component {
   constructor(props) {
   	super(props);
 	this.state = {
-		tasklist: ["Lista de la app", "otra tarea"]
+		tasklist: []
 	};
   }
 
   addTask = (task) => {
 
-	if (task == "") {
-		return;
-	}
-
-	this.state.tasklist.push(task);
+	this.state.tasklist.unshift(task);
 	this.setState({
 		tasklist: this.state.tasklist
 	});
