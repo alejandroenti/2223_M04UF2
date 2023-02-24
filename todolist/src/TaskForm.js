@@ -1,6 +1,6 @@
 import React from 'react';
 
-class TaskFrom extends React.Component {
+class TaskForm extends React.Component {
 
 	render() {
 		return (
@@ -13,4 +13,4 @@ class TaskFrom extends React.Component {
 	}
 }
 
-export default TaskFrom;
+export default TaskForm;
