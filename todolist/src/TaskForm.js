@@ -20,7 +20,7 @@ class TaskForm extends React.Component {
 			}}/></p>
 		  	<button type="button" onClick={() => {
 				
-				if (this.state.task.trim() == "") {
+				if (this.state.task.trim() === "") {
 					this.setState({
 						task: ""
 					});

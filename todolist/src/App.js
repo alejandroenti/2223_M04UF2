@@ -18,7 +18,15 @@ class App extends React.Component {
   addTask = (task) => {
 
 	this.state.tasklist.unshift(task);
-	this.setState({
+	this.setState ({
+		tasklist: this.state.tasklist
+	});
+  }
+
+  deleteTask = (task) => {
+
+	this.state.tasklist.splice(this.state.tasklist.indexOf(task), 1);
+	this.setState ({
 		tasklist: this.state.tasklist
 	});
   }
@@ -29,7 +37,7 @@ class App extends React.Component {
     	<main className="App">
 			<Title text="ToDO App" />
 			<TaskForm onAddTask={this.addTask} />
-			<TaskList list={this.state.tasklist} />
+			<TaskList list={this.state.tasklist} onDeleteTask={this.deleteTask}/>
 			<p>You have <strong>{this.state.tasklist.length}</strong> pending tasks</p>
     	</main>
   	);

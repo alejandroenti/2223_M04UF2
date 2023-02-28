@@ -16,7 +16,7 @@ class TaskList extends React.Component {
 	
 		let tasks = this.state.items.map(task => {
 			return (
-				<TaskItem text={task} />
+				<TaskItem text={task} onDeleteTask={this.props.onDeleteTask}/>
 			);
 		});
 
