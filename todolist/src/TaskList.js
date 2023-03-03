@@ -1,5 +1,6 @@
 import React from 'react';
 import TaskItem from './TaskItem'
+import List from '@mui/material/List'
 
 class TaskList extends React.Component {
 
@@ -29,9 +30,9 @@ class TaskList extends React.Component {
 
 		return (
 		
-		<ol>
+		<List>
 			{tasks}
-		</ol>
+		</List>
 		);
 	}
 }

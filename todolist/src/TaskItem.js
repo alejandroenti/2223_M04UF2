@@ -1,6 +1,9 @@
 import React from 'react';
-import ListItem from '@mui/material/ListItem'
+import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText'
+import DeleteIcon from '@mui/icons-material/Delete';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 
 class TaskItem extends React.Component {
 
@@ -9,7 +12,11 @@ class TaskItem extends React.Component {
 		
 		<ListItem>
 			<ListItemText primary={this.props.text}/>
-			<button type="button" onClick={() => this.props.onDeleteTask(this.props.text)}>🗑️  </button>
+			<Tooltip title="Delete Task" onClick={this.props.onDeleteTask}>
+				<IconButton>
+					<DeleteIcon />
+				</IconButton>
+			</Tooltip>
 		</ListItem>
 		);
 	}
