@@ -25,9 +25,9 @@ class App extends React.Component {
 	});
   }
 
-  deleteTask = (task) => {
+  deleteTask = (taskNum) => {
 
-	this.state.tasklist.splice(this.state.tasklist.indexOf(task), 1);
+	this.state.tasklist.splice(taskNum, 1);
 	this.setState ({
 		tasklist: this.state.tasklist
 	});
@@ -45,7 +45,11 @@ class App extends React.Component {
 				height: '100%'
 			}}
 		>
-			<Paper elevation={3}>
+			<Paper elevation={3}
+				sx={{
+					padding:'16px'
+				}}
+			>
 				<Title text="ToDO App" />
 				<TaskForm onAddTask={this.addTask} />
 				<TaskList list={this.state.tasklist} onDeleteTask={this.deleteTask}/>

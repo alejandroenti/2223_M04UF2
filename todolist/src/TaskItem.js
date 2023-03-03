@@ -32,6 +32,11 @@ class TaskItem extends React.Component {
 		});
 	}
 
+	deleteTask = () => {
+		this.closeDialog();
+		this.props.onDeleteTask(this.props.numTask);
+	}
+
 	render() {
 		return (
 		
@@ -45,15 +50,12 @@ class TaskItem extends React.Component {
 			<Dialog open={this.state.open}>
 				<DialogContent>
 					<DialogContentText>
-						Do you want to erase the task?
+						Do you want to delete task?
 					</DialogContentText>
 				</DialogContent>
 				<DialogActions>
 					<Button type="button" color="secondary" onClick={this.closeDialog}>Discard</Button>	
-					<Button type="button" variant="contained" color="error" autofocus onClick={ () => {
-						this.closeDialog();
-						this.props.onDeleteTask(this.props.text);							
-					}}>Erase</Button>	
+					<Button type="button" variant="contained" color="error" autofocus onClick={this.deleteTask}>Delete</Button>	
 				</DialogActions>
       		</Dialog>	
 		</ListItem>
