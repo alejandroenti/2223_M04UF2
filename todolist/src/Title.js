@@ -1,11 +1,12 @@
 import React from 'react';
+import Typography from '@mui/material/Typography';
 
 class Title extends React.Component {
 
 	render() {
 		return (
 		
-			<h1>{this.props.text}</h1>
+			<Typography variant="h3" component="h1">{this.props.text}</Typography>
 		);
 	}
 }

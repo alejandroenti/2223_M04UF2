@@ -5,6 +5,9 @@ import Box from '@mui/material/Box';
 import Title from './Title';
 import TaskForm from './TaskForm';
 import TaskList from './TaskList';
+import Chip from '@mui/material/Chip';
+import Badge from '@mui/material/Badge';
+import AnnouncementIcon from '@mui/icons-material/Announcement';
 
 import './TODO.css';
 
@@ -42,7 +45,8 @@ class App extends React.Component {
 				flexWrap:'wrap',
 				justifyContent:'center',
 				alignContent:'center',
-				height: '100%'
+				height: '100%',
+				background: 'linear-gradient(#e66465, #9198e5)'
 			}}
 		>
 			<Paper elevation={3}
@@ -53,7 +57,12 @@ class App extends React.Component {
 				<Title text="ToDO App" />
 				<TaskForm onAddTask={this.addTask} />
 				<TaskList list={this.state.tasklist} onDeleteTask={this.deleteTask}/>
-				<p>You have <strong>{this.state.tasklist.length}</strong> pending tasks</p>
+				<Chip 
+					variant="outlined"
+					color="info"
+					icon={<Badge badgeContent={this.state.tasklist.length} color="info"><AnnouncementIcon color="action"/></Badge>}
+					label="pending tasks"
+				/>
 			</Paper>
     	</Box>
   	);
