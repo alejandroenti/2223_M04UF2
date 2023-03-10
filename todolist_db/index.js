@@ -1,6 +1,22 @@
 const http = require('http');
 
 http.createServer(function (request, response) {
+
+	response.setHeader("Access-Control-Allow-Origin", "*");
+	response.setHeader("Access-Control-Allow-Methods", "OPTIONS, GET, POST");
+	response.setHeader("Access-Control-Allow-Max-Age", "2592000");
+
+	if (request.method == "POST") {
+		let data = "";
+
+		request.on('data', dataChunk => data += dataChunk);
+		request.on('end', () => {
+			console.log(data);
+			response.end();
+		});
+
+		return;
+	}
 	
 	let items = [
 		{
@@ -19,9 +35,6 @@ http.createServer(function (request, response) {
 
 	let itemsJson = JSON.stringify(items);
 
-	response.setHeader("Access-Control-Allow-Origin", "*");
-	response.setHeader("Access-Control-Allow-Methods", "OPTIONS, GET");
-	response.setHeader("Access-Control-Allow-Max-Age", "2592000");
 	response.write(itemsJson);
 	response.end();
 
