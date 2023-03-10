@@ -20,6 +20,28 @@ class App extends React.Component {
 	};
   }
 
+  componentDidMount () {
+	
+	fetch('http://10.40.1.19:8080')
+		.then(response => response.json())
+		.then(data => this.createTasklist(data));
+  }
+
+  createTasklist = (list) => {
+	
+	if (list.length <= 0) {
+		return;
+	}
+
+	for (let i = 0; i < list.length; i++) {
+		this.state.tasklist.unshift(list[i].item);
+	}
+	
+	this.setState ({
+		tasklist: this.state.tasklist
+	});
+  }
+
   addTask = (task) => {
 
 	this.state.tasklist.unshift(task);

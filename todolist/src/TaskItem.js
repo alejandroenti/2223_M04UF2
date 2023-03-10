@@ -50,7 +50,7 @@ class TaskItem extends React.Component {
 			<Dialog open={this.state.open}>
 				<DialogContent>
 					<DialogContentText>
-						Do you want to delete task?
+						Do you want to delete the task?
 					</DialogContentText>
 				</DialogContent>
 				<DialogActions>
